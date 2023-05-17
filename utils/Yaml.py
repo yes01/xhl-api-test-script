@@ -37,12 +37,12 @@ class Yaml:
         if all(conditions):
             file_name = args.env
         else:
-            file_name = "hk-staging"
+            file_name = "uat-env"
             concurrency_type = "xdist"
-        config_dict = {"hk-staging": "staging.yaml"}
+        config_dict = {"uat-env": "env.yaml"}
         conf_filename = config_dict[file_name]
         detail = self.get_yaml_data(conf_filename)
-        city = file_name.split("-")[0]
-        data_diction = detail[city][data]
+        env = file_name.split("-")[0]
+        data_diction = detail[env][data]
         region_diction = "" if data_diction is None else data_diction
         return region_diction

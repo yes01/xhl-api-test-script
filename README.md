@@ -1,6 +1,8 @@
-# xhl-api-test-script
+# xhl-api-test-script项目
 
-小火龙平台 - API 测试脚本
+### 说明
+
+此框架为小火龙平台 - API 测试脚本，是基于Python+Pytest+Requests+Allure+Yaml实现接口自动化测试,建议使用建议python3.7+环境
 
 
 **多进程、多线程使用方法**
@@ -31,7 +33,6 @@ pip install -r requirements.txt
 
 ***3、配置allure环境***
 ```sh
-ps:配置jdk环境
 MAC:
 1.下载allure.tgz包
 curl -O https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.22.0/allure-commandline-2.22.0.tgz
@@ -44,6 +45,8 @@ vi ~/.bash_profile
 PATH="/Users/xxx/allure-2.22.0/bin:${PATH}"
 export PATH
 source ~/.bash_profile
+```
+```markdown
 window:
 1.下载allure.zip包
 https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.22.0/allure-commandline-2.22.0.zip

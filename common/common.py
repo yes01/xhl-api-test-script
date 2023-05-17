@@ -8,8 +8,6 @@ import allure
 conf = config.ConfigBase()
 
 ENV_URL = conf.ENV_URL
-ENV_LANGUAGE = conf.ENV_LANGUAGE
-ENV_EC_APP_ID = conf.ENV_EC_APP_ID
 
 
 def check_type(data, d_type, d_type2=None):
@@ -113,25 +111,6 @@ def generate_number02(num):
     for i in range(int(num-4)):
         random_number += random.choice(words)
     return random_number
-
-
-def get_language():
-    if ENV_LANGUAGE == "zh_hk":
-        lang_fir = "zh_hk"
-        lang_sec = "en"
-    elif ENV_LANGUAGE == "vi":
-        lang_fir = "vi"
-        lang_sec = "en"
-    elif ENV_LANGUAGE == "th":
-        lang_fir = "th"
-        lang_sec = "en"
-    elif ENV_LANGUAGE == "zh_tw":
-        lang_fir = "zh_tw"
-        lang_sec = "en"
-    else:
-        lang_fir = "en"
-        lang_sec = None
-    return lang_fir, lang_sec
 
 
 def parsing_list(connect):

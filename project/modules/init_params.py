@@ -17,9 +17,8 @@ def member_validate_account(modify_target, content, phone_number):
     return data
 
 
-def user_info(modify_target, content):
+def login_by_password(modify_target, content):
     data = {
-        "user_id": 1
     }
     common.modify_dictionary(data, modify_target, content)
 
