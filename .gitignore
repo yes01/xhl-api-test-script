@@ -8,4 +8,6 @@ Log/
 *.log
 report.html
 .coverage
+*.json
+*.js
 /report/
