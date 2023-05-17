@@ -23,3 +23,11 @@ def login_by_password(modify_target, content):
     common.modify_dictionary(data, modify_target, content)
 
     return data
+
+
+def null_data():
+    data = {
+    }
+
+    return data
+

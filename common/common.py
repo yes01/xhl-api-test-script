@@ -1,7 +1,8 @@
 from loguru import logger
 from config import config
-import string
-import random
+import hashlib
+# import string
+# import random
 import allure
 
 
@@ -95,22 +96,22 @@ def modify_list(data, key, modify_target, content):
                     i[modify_target] = content
 
 
-def generate_number(num):
-    """生成随机数字+字母"""
-    random_number = 'test_'
-    words = ''.join((string.ascii_lowercase, string.ascii_uppercase, string.digits))
-    for i in range(int(num-5)):
-        random_number += random.choice(words)
-    return random_number
+# def generate_number(num):
+#     """生成随机数字+字母"""
+#     random_number = 'test_'
+#     words = ''.join((string.ascii_lowercase, string.ascii_uppercase, string.digits))
+#     for i in range(int(num-5)):
+#         random_number += random.choice(words)
+#     return random_number
 
 
-def generate_number02(num):
-    """创建优惠卷专用生成随机数字+字母"""
-    random_number = 'test'
-    words = ''.join((string.ascii_lowercase, string.ascii_uppercase, string.digits))
-    for i in range(int(num-4)):
-        random_number += random.choice(words)
-    return random_number
+# def generate_number02(num):
+#     """创建优惠卷专用生成随机数字+字母"""
+#     random_number = 'test'
+#     words = ''.join((string.ascii_lowercase, string.ascii_uppercase, string.digits))
+#     for i in range(int(num-4)):
+#         random_number += random.choice(words)
+#     return random_number
 
 
 def parsing_list(connect):
@@ -141,3 +142,12 @@ def filter_list(target_list, key, expect):
             return i
     logger.info("未筛选到相应的数据！！！")
     return target_list[0]
+
+
+def password_encryption(password):
+    """登录密码MD5加密"""
+    pwd = password + "dDSANDdsa_daoa+5asxa^2FMGFofa0asda"
+    md5 = hashlib.md5()
+    md5.update(pwd.encode('utf-8'))
+    pwd_encryption = md5.hexdigest()
+    return pwd_encryption
