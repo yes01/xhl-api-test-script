@@ -1,6 +1,7 @@
 from loguru import logger
 from config import config
 import hashlib
+import time
 # import string
 # import random
 import allure
@@ -151,3 +152,13 @@ def password_encryption(password):
     md5.update(pwd.encode('utf-8'))
     pwd_encryption = md5.hexdigest()
     return pwd_encryption
+
+
+def login_send_sms_secret():
+    """发送短信验证码secret"""
+    timestamp = int(time.time())
+    string = "doujia" + "3" + str(timestamp) + "zhushoudDSANDdsa_daoa+5asxa^2FMGFofa0asda"
+    md5 = hashlib.md5()
+    md5.update(string.encode('utf-8'))
+    secret = md5.hexdigest()
+    return timestamp, secret

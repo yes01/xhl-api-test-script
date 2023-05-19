@@ -93,11 +93,12 @@ def get(get_url, data, module_url=ENV_URL, header="valuable"):
     return res
 
 
-def post(post_url, data, module_url=ENV_URL):
+def post(post_url, data, module_url=ENV_URL, header="valuable"):
     """
     @type post_url: 请求路径
     @type data: 请求参数
     @type module_url: 域名地址
+    @type header: 请求头是否为空，默认为有值(token)
     """
     time.sleep(1)
     j_data = json.dumps(data, ensure_ascii=False)
@@ -110,8 +111,12 @@ def post(post_url, data, module_url=ENV_URL):
     if not token:
         token = get_access_token()
     headers = {
-        "Authorization": token
+        "token": token
     }
+    if header in "valuable":
+        headers = headers
+    else:
+        del headers['token']
     try:
         print("请求header==>", headers)
         response = requests.post(url, j_data, headers=headers, timeout=15)

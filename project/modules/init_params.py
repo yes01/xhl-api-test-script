@@ -17,17 +17,8 @@ def member_validate_account(modify_target, content, phone_number):
     return data
 
 
-def login_by_password(modify_target, content):
-    data = {
-    }
-    common.modify_dictionary(data, modify_target, content)
-
-    return data
-
-
 def null_data():
     data = {
     }
 
     return data
-
